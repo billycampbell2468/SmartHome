@@ -1,0 +1,653 @@
+{
+  "bridge": {
+    "name": "Homebridge_0",
+    "username": "homebridge_0",
+    "port": 51826,
+    "pin": "987-65-432"
+  },
+
+  "description": "Control of Lights, Switches, Blinds and Sensors",
+
+  "accessories": [
+    {
+        "accessory": "Script2",
+        "name": "Kitchen Centre",
+        "on": "/var/lib/homebridge/input_on.sh 2 0",
+        "off": "/var/lib/homebridge/input_off.sh 2 0",
+        "fileState": "/var/lib/homebridge/state_2/0",
+        "on_value" : "true"
+    },
+    {
+	   "accessory": "HTTP-LIGHTBULB",
+	   "name": "Kitchen Outer",
+	   "onUrl":    {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_0_On", "method": "PUT", "body": "true"},
+	   "offUrl":   {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_0_On", "method": "PUT", "body": "false"},
+	   "statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_0_On",
+	   "statusPattern": "true",
+	   "brightness": {"statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_0_Brightness",
+	   "setUrl": {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_0_Brightness", "method": "PUT", "body": "%s"}},
+	   "pullInterval": 500
+	},
+	{
+        "accessory": "Script2",
+        "name": "Kitchen Counter",
+        "on": "/var/lib/homebridge/input_on.sh 2 2",
+        "off": "/var/lib/homebridge/input_off.sh 2 2",
+        "fileState": "/var/lib/homebridge/state_2/2",
+        "on_value" : "true"
+    },
+	{
+	   "accessory": "HTTP-LIGHTBULB",
+	   "name": "Kitchen Wall",
+	   "onUrl":    {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_1_On", "method": "PUT", "body": "true"},
+	   "offUrl":   {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_1_On", "method": "PUT", "body": "false"},
+	   "statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_1_On",
+	   "statusPattern": "true",
+	   "brightness": {"statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_1_Brightness",
+	   "setUrl": {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_1_Brightness", "method": "PUT", "body": "%s"}},
+	   "pullInterval": 500
+	},
+	{
+        "accessory": "Script2",
+        "name": "Outdoor Side",
+        "on": "/var/lib/homebridge/input_on.sh 2 4",
+        "off": "/var/lib/homebridge/input_off.sh 2 4",
+        "fileState": "/var/lib/homebridge/state_2/4",
+        "on_value" : "true"
+    },
+	{
+        "accessory": "Script2",
+        "name": "Sitting Room Main",
+        "on": "/var/lib/homebridge/input_on.sh 2 6",
+        "off": "/var/lib/homebridge/input_off.sh 2 6",
+        "fileState": "/var/lib/homebridge/state_2/6",
+        "on_value" : "true"
+    },
+	{
+	   "accessory": "HTTP-LIGHTBULB",
+	   "name": "Sitting Room Lamp 1",
+	   "onUrl":    {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_2_On", "method": "PUT", "body": "true"},
+	   "offUrl":   {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_2_On", "method": "PUT", "body": "false"},
+	   "statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_2_On",
+	   "statusPattern": "true",
+	   "brightness": {"statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_2_Brightness",
+	   "setUrl": {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_2_Brightness", "method": "PUT", "body": "%s"}},
+	   "pullInterval": 500
+	},
+	{
+	   "accessory": "HTTP-LIGHTBULB",
+	   "name": "Sitting Room Side",
+	   "onUrl":    {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_3_On", "method": "PUT", "body": "true"},
+	   "offUrl":   {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_3_On", "method": "PUT", "body": "false"},
+	   "statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_3_On",
+	   "statusPattern": "true",
+	   "brightness": {"statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_3_Brightness",
+	   "setUrl": {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_3_Brightness", "method": "PUT", "body": "%s"}},
+	   "pullInterval": 500
+	},
+    {
+	   "accessory": "HTTP-LIGHTBULB",
+	   "name": "Sitting Room Tall Lamp",
+	   "onUrl":    {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_5_On", "method": "PUT", "body": "true"},
+	   "offUrl":   {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_5_On", "method": "PUT", "body": "false"},
+	   "statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_5_On",
+	   "statusPattern": "true",
+	   "brightness": {"statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_5_Brightness",
+	   "setUrl": {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_5_Brightness", "method": "PUT", "body": "%s"}},
+	   "pullInterval": 500
+	},
+	{
+        "accessory": "Script2",
+        "name": "Dining Room Main",
+        "on": "/var/lib/homebridge/input_on.sh 1 4",
+        "off": "/var/lib/homebridge/input_off.sh 1 4",
+        "fileState": "/var/lib/homebridge/state_1/4",
+        "on_value" : "true"
+    },
+	{
+	   "accessory": "HTTP-LIGHTBULB",
+	   "name": "Dining Room Lamp",
+	   "onUrl":    {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_6_On", "method": "PUT", "body": "true"},
+	   "offUrl":   {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_6_On", "method": "PUT", "body": "false"},
+	   "statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_6_On",
+	   "statusPattern": "true",
+	   "brightness": {"statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_6_Brightness",
+	   "setUrl": {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_6_Brightness", "method": "PUT", "body": "%s"}},
+	   "pullInterval": 500
+	},
+	{
+        "accessory": "Script2",
+        "name": "Outdoor Back",
+        "on": "/var/lib/homebridge/input_on.sh 1 6",
+        "off": "/var/lib/homebridge/input_off.sh 1 6",
+        "fileState": "/var/lib/homebridge/state_1/6",
+        "on_value" : "true"
+    },
+	{
+        "accessory": "Script2",
+        "name": "Hall Main",
+        "on": "/var/lib/homebridge/input_on.sh 1 7",
+        "off": "/var/lib/homebridge/input_off.sh 1 7",
+        "fileState": "/var/lib/homebridge/state_1/7",
+        "on_value" : "true"
+    },
+	{
+	   "accessory": "HTTP-LIGHTBULB",
+	   "name": "Hall Lamp",
+	   "onUrl":    {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_4_On", "method": "PUT", "body": "true"},
+	   "offUrl":   {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_4_On", "method": "PUT", "body": "false"},
+	   "statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_4_On",
+	   "statusPattern": "true",
+	   "brightness": {"statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_4_Brightness",
+	   "setUrl": {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Dimmer_4_Brightness", "method": "PUT", "body": "%s"}},
+	   "pullInterval": 500
+	},
+	{
+        "accessory": "Script2",
+        "name": "Outdoor Front",
+        "on": "/var/lib/homebridge/input_on.sh 0 1",
+        "off": "/var/lib/homebridge/input_off.sh 0 1",
+        "fileState": "/var/lib/homebridge/state_0/1",
+        "on_value" : "true"
+    },
+	{
+        "accessory": "Script2",
+        "name": "Downstairs Bathroom",
+        "on": "/var/lib/homebridge/input_on.sh 0 2",
+        "off": "/var/lib/homebridge/input_off.sh 0 2",
+        "fileState": "/var/lib/homebridge/state_0/2",
+        "on_value" : "true"
+    },
+	{
+        "accessory": "Script2",
+        "name": "Downstairs Bathroom Fan",
+        "on": "/var/lib/homebridge/input_on.sh 0 3",
+        "off": "/var/lib/homebridge/input_off.sh 0 3",
+        "fileState": "/var/lib/homebridge/state_0/3",
+        "on_value" : "true"
+    },
+	{
+        "accessory": "Script2",
+        "name": "Stairs Night Light",
+        "on": "/var/lib/homebridge/input_on.sh 0 4",
+        "off": "/var/lib/homebridge/input_off.sh 0 4",
+        "fileState": "/var/lib/homebridge/state_0/4",
+        "on_value" : "true"
+    },
+    {
+        "accessory": "Script2",
+        "name": "Festoons",
+        "on": "/var/lib/homebridge/input_on.sh 0 5",
+        "off": "/var/lib/homebridge/input_off.sh 0 5",
+        "fileState": "/var/lib/homebridge/state_0/5",
+        "on_value" : "true"
+    },
+    {
+        "accessory": "Script2",
+        "name": "Front Security Light",
+        "on": "/var/lib/homebridge/input_on.sh 0 6",
+        "off": "/var/lib/homebridge/input_off.sh 0 6",
+        "fileState": "/var/lib/homebridge/state_0/6",
+        "on_value" : "true"
+    },
+	{
+        "accessory": "Script2",
+        "name": "Dining Lamp 2",
+        "on": "/var/lib/homebridge/input_on.sh 0 7",
+        "off": "/var/lib/homebridge/input_off.sh 0 7",
+        "fileState": "/var/lib/homebridge/state_0/7",
+        "on_value" : "true"
+    },
+	{
+        "accessory": "Script2",
+        "name": "Side Security Light",
+        "on": "/var/lib/homebridge/input_on.sh 3 0",
+        "off": "/var/lib/homebridge/input_off.sh 3 0",
+        "fileState": "/var/lib/homebridge/relay_3/0",
+        "on_value" : "true"
+    },
+	{
+        "accessory": "Script2",
+        "name": "Back Security Light",
+        "on": "/var/lib/homebridge/input_on.sh 3 1",
+        "off": "/var/lib/homebridge/input_off.sh 3 1",
+        "fileState": "/var/lib/homebridge/relay_3/1",
+        "on_value" : "true"
+    },
+	{
+        "accessory": "Script2",
+        "name": "Kitchen White Indicator",
+        "on": "/var/lib/homebridge/ind_on.sh 2 0",
+        "off": "/var/lib/homebridge/ind_off.sh 2 0",
+        "fileState": "/var/lib/homebridge/ind_2/0",
+        "on_value" : "true"
+    },
+	{
+        "accessory": "Script2",
+        "name": "Kitchen Blue Indicator",
+        "on": "/var/lib/homebridge/ind_on.sh 2 1",
+        "off": "/var/lib/homebridge/ind_off.sh 2 1",
+        "fileState": "/var/lib/homebridge/ind_2/1",
+        "on_value" : "true"
+    },
+	{
+        "accessory": "Script2",
+        "name": "Outdoor Side Indicator",
+        "on": "/var/lib/homebridge/ind_on.sh 2 4",
+        "off": "/var/lib/homebridge/ind_off.sh 2 4",
+        "fileState": "/var/lib/homebridge/ind_2/4",
+        "on_value" : "true"
+    },
+    {
+        "accessory": "Script2",
+        "name": "Kitchen Socket Indicator",
+        "on": "/var/lib/homebridge/ind_on.sh 2 5",
+        "off": "/var/lib/homebridge/ind_off.sh 2 5",
+        "fileState": "/var/lib/homebridge/ind_2/5",
+        "on_value" : "true"
+    },
+	{
+        "accessory": "Script2",
+        "name": "Sitting Room White Indicator",
+        "on": "/var/lib/homebridge/ind_on.sh 1 1",
+        "off": "/var/lib/homebridge/ind_off.sh 1 1",
+        "fileState": "/var/lib/homebridge/ind_1/1",
+        "on_value" : "true"
+    },
+	{
+        "accessory": "Script2",
+        "name": "Sitting Room Blue Indicator",
+        "on": "/var/lib/homebridge/ind_on.sh 1 0",
+        "off": "/var/lib/homebridge/ind_off.sh 1 0",
+        "fileState": "/var/lib/homebridge/ind_1/0",
+        "on_value" : "true"
+    },
+	{
+        "accessory": "Script2",
+        "name": "Dining Room White Indicator",
+        "on": "/var/lib/homebridge/ind_on.sh 1 4",
+        "off": "/var/lib/homebridge/ind_off.sh 1 4",
+        "fileState": "/var/lib/homebridge/ind_1/4",
+        "on_value" : "true"
+    },
+	{
+        "accessory": "Script2",
+        "name": "Dining Room Blue Indicator",
+        "on": "/var/lib/homebridge/ind_on.sh 1 5",
+        "off": "/var/lib/homebridge/ind_off.sh 1 5",
+        "fileState": "/var/lib/homebridge/ind_1/5",
+        "on_value" : "true"
+    },
+	{
+        "accessory": "Script2",
+        "name": "Outdoor Back White Indicator",
+        "on": "/var/lib/homebridge/ind_on.sh 1 6",
+        "off": "/var/lib/homebridge/ind_off.sh 1 6",
+        "fileState": "/var/lib/homebridge/ind_1/6",
+        "on_value" : "true"
+    },
+	{
+        "accessory": "Script2",
+        "name": "Hall White Indicator",
+        "on": "/var/lib/homebridge/ind_on.sh 1 7",
+        "off": "/var/lib/homebridge/ind_off.sh 1 7",
+        "fileState": "/var/lib/homebridge/ind_1/7",
+        "on_value" : "true"
+    },
+	{
+        "accessory": "Script2",
+        "name": "Hall Blue Indicator",
+        "on": "/var/lib/homebridge/ind_on.sh 0 0",
+        "off": "/var/lib/homebridge/ind_off.sh 0 0",
+        "fileState": "/var/lib/homebridge/ind_0/0",
+        "on_value" : "true"
+    },
+	{
+        "accessory": "Script2",
+        "name": "Outdoor Front Indicator",
+        "on": "/var/lib/homebridge/ind_on.sh 0 1",
+        "off": "/var/lib/homebridge/ind_off.sh 0 1",
+        "fileState": "/var/lib/homebridge/ind_0/1",
+        "on_value" : "true"
+    },
+	{
+        "accessory": "Script2",
+        "name": "Downstairs Bathroom Indicator",
+        "on": "/var/lib/homebridge/ind_on.sh 0 2",
+        "off": "/var/lib/homebridge/ind_off.sh 0 2",
+        "fileState": "/var/lib/homebridge/ind_0/2",
+        "on_value" : "true"
+    },
+	{
+		  "accessory": "HTTP-LIGHTBULB",
+		  "name": "Led_Strip_0",
+		  "onUrl":    {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_0_On", "method": "PUT", "body": "true"},
+		  "offUrl":   {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_0_On", "method": "PUT", "body": "false"},
+		  "statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_0_On",
+		  "statusPattern": "true",
+		  "brightness": {"statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_0_Brightness",
+			"setUrl": {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_0_Brightness", "method": "PUT", "body": "%s"}},
+		  "hue": {"statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_0_Hue",
+			"setUrl": {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_0_Hue", "method": "PUT", "body": "%s"}},
+		  "saturation": {"statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_0_Saturation",
+			"setUrl": {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_0_Saturation", "method": "PUT", "body": "%s"}},
+		  "pullInterval": 500
+	},
+	{
+		  "accessory": "HTTP-LIGHTBULB",
+		  "name": "Led_Strip_1",
+		  "onUrl":    {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_1_On", "method": "PUT", "body": "true"},
+		  "offUrl":   {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_1_On", "method": "PUT", "body": "false"},
+		  "statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_1_On",
+		  "statusPattern": "true",
+		  "brightness": {"statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_1_Brightness",
+			"setUrl": {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_1_Brightness", "method": "PUT", "body": "%s"}},
+		  "hue": {"statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_1_Hue",
+			"setUrl": {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_1_Hue", "method": "PUT", "body": "%s"}},
+		  "saturation": {"statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_1_Saturation",
+			"setUrl": {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_1_Saturation", "method": "PUT", "body": "%s"}},
+		  "pullInterval": 500
+	},
+	{
+		  "accessory": "HTTP-LIGHTBULB",
+		  "name": "Led_Strip_2",
+		  "onUrl":    {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_2_On", "method": "PUT", "body": "true"},
+		  "offUrl":   {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_2_On", "method": "PUT", "body": "false"},
+		  "statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_2_On",
+		  "statusPattern": "true",
+		  "brightness": {"statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_2_Brightness",
+			"setUrl": {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_2_Brightness", "method": "PUT", "body": "%s"}},
+		  "hue": {"statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_2_Hue",
+			"setUrl": {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_2_Hue", "method": "PUT", "body": "%s"}},
+		  "saturation": {"statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_2_Saturation",
+			"setUrl": {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_2_Saturation", "method": "PUT", "body": "%s"}},
+		  "pullInterval": 500
+	},
+    {
+		  "accessory": "HTTP-LIGHTBULB",
+		  "name": "Led_Strip_3",
+		  "onUrl":    {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_3_On", "method": "PUT", "body": "true"},
+		  "offUrl":   {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_3_On", "method": "PUT", "body": "false"},
+		  "statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_3_On",
+		  "statusPattern": "true",
+		  "brightness": {"statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_3_Brightness",
+			"setUrl": {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_3_Brightness", "method": "PUT", "body": "%s"}},
+		  "hue": {"statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_3_Hue",
+			"setUrl": {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_3_Hue", "method": "PUT", "body": "%s"}},
+		  "saturation": {"statusUrl": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_3_Saturation",
+			"setUrl": {"url": "http://127.0.0.1:8001/Cmd4Scripts/Cmd4States/Status_Led_Strip_3_Saturation", "method": "PUT", "body": "%s"}},
+		  "pullInterval": 500
+	},
+	{
+        "accessory": "Script2",
+        "name": "Reboot",
+        "on": "/var/lib/homebridge/input_on.sh reboot 1",
+        "off": "/var/lib/homebridge/input_off.sh reboot 1",
+        "fileState": "/var/lib/homebridge/input_reboot/1",
+        "on_value" : "true"
+    },
+    {
+        "accessory": "Script2",
+        "name": "Night Time",
+        "on": "/var/lib/homebridge/input_on.sh control night",
+        "off": "/var/lib/homebridge/input_off.sh control night",
+        "fileState": "/var/lib/homebridge/input_control/night",
+        "on_value" : "true"
+    },
+	{
+        "accessory": "Script2",
+        "name": "Evening Lights",
+        "on": "/var/lib/homebridge/input_on.sh control evening_lights",
+        "off": "/var/lib/homebridge/input_off.sh control evening_lights",
+        "fileState": "/var/lib/homebridge/input_control/evening_lights",
+        "on_value" : "true"
+    },
+    {
+        "accessory": "Script2",
+        "name": "Arm Security Lights",
+        "on": "/var/lib/homebridge/input_on.sh control security_lights",
+        "off": "/var/lib/homebridge/input_off.sh control security_lights",
+        "fileState": "/var/lib/homebridge/input_control/security_lights",
+        "on_value" : "true"
+    },
+	{
+        "accessory": "Script2",
+        "name": "Package Garage",
+        "on": "/var/lib/homebridge/input_on.sh control package_garage",
+        "off": "/var/lib/homebridge/input_off.sh control package_garage",
+        "fileState": "/var/lib/homebridge/input_control/package_garage",
+        "on_value" : "true"
+    },
+    {
+        "accessory": "Script2",
+        "name": "Reset Fire Lights",
+        "on": "/var/lib/homebridge/input_on.sh control reset_fire_lights",
+        "off": "/var/lib/homebridge/input_off.sh control reset_fire_lights",
+        "fileState": "/var/lib/homebridge/input_control/reset_fire_lights",
+        "on_value" : "true"
+    },
+    {
+        "accessory": "Script2",
+        "name": "TV Remote",
+        "on": "/var/lib/homebridge/input_on.sh control tv",
+        "off": "/var/lib/homebridge/input_off.sh control tv",
+        "fileState": "/var/lib/homebridge/input_control/tv",
+        "on_value" : "true"
+    },
+    {
+        "accessory": "Script2",
+        "name": "First Downstairs",
+        "on": "/var/lib/homebridge/input_on.sh control FDS",
+        "off": "/var/lib/homebridge/input_off.sh control FDS",
+        "fileState": "/var/lib/homebridge/input_control/FDS",
+        "on_value" : "true"
+    },
+    {
+        "accessory": "Script2",
+        "name": "Surpress FDS",
+        "on": "/var/lib/homebridge/input_on.sh control SFDS",
+        "off": "/var/lib/homebridge/input_off.sh control SFDS",
+        "fileState": "/var/lib/homebridge/input_control/SFDS",
+        "on_value" : "true"
+    },
+    {
+        "accessory": "Script2",
+        "name": "Do Not Disturb",
+        "on": "/var/lib/homebridge/input_on.sh control do_not_disturb",
+        "off": "/var/lib/homebridge/input_off.sh control do_not_disturb",
+        "fileState": "/var/lib/homebridge/input_control/do_not_disturb",
+        "on_value" : "true"
+    },
+    {
+        "accessory": "Script2",
+        "name": "Suppress DND Message",
+        "on": "/var/lib/homebridge/input_on.sh control dnd_suppress_doorbell_msg",
+        "off": "/var/lib/homebridge/input_off.sh control dnd_suppress_doorbell_msg",
+        "fileState": "/var/lib/homebridge/input_control/dnd_suppress_doorbell_msg",
+        "on_value" : "true"
+    },
+    {
+        "accessory": "Script2",
+        "name": "DND Message",
+        "on": "/var/lib/homebridge/input_on.sh control DND_Msg",
+        "off": "/var/lib/homebridge/input_off.sh control DND_Msg",
+        "fileState": "/var/lib/homebridge/input_control/DND_Msg",
+        "on_value" : "true"
+    },
+    {
+        "accessory": "Script2",
+        "name": "Going To Bed",
+        "on": "/var/lib/homebridge/input_on.sh control gtb",
+        "off": "/var/lib/homebridge/input_off.sh control gtb",
+        "fileState": "/var/lib/homebridge/input_control/gtb",
+        "on_value" : "true"
+    },
+    {
+        "accessory": "Script2",
+        "name": "Leaving The House",
+        "on": "/var/lib/homebridge/input_on.sh control lth",
+        "off": "/var/lib/homebridge/input_off.sh control lth",
+        "fileState": "/var/lib/homebridge/input_control/lth",
+        "on_value" : "true"
+    },
+    {
+        "accessory": "Script2",
+        "name": "Guest Mode",
+        "on": "/var/lib/homebridge/input_on.sh control guest",
+        "off": "/var/lib/homebridge/input_off.sh control guest",
+        "fileState": "/var/lib/homebridge/input_control/guest",
+        "on_value" : "true"
+    },
+    {
+        "accessory": "Script2",
+        "name": "Debug 0",
+        "on": "/var/lib/homebridge/input_on.sh control debug",
+        "off": "/var/lib/homebridge/input_off.sh control debug",
+        "fileState": "/var/lib/homebridge/input_control/debug",
+        "on_value" : "true"
+    }
+  ],
+	"platforms" :
+   [
+      {
+          "platform": "Cmd4",
+          "name": "Cmd4",
+          "outputConstants": false,
+          "accessories" :
+          [
+			  {
+                 "type": "MotionSensor",
+                 "displayName": "Crash_Alert",
+                 "motionDetected":           "FALSE",
+                 "statusActive":             "TRUE",
+                 "name":                     "Crash Alert 0",
+				 "polling":
+                 [
+                    {"motionDetected": 50, "interval": 1, "timeout": 4000}
+                 ],
+                 "stateChangeResponseTime":   1,
+                 "state_cmd": "node /var/lib/homebridge/Cmd4Scripts/State.js"
+              },
+			  {
+                 "type": "TemperatureSensor",
+                 "displayName": "Temperature_0",
+                 "currentTemperature":        50.0,
+                 "name":                     "Temperature 0",
+                 "stateChangeResponseTime":   3,
+                 "state_cmd": "node /var/lib/homebridge/Cmd4Scripts/State.js"
+              },
+			  {
+                 "type": "HumiditySensor",
+                 "displayName": "Humidity_0",
+                 "currentRelativeHumidity":   1,
+                 "name":                     "Humidity 0",
+                 "stateChangeResponseTime":   3,
+                 "state_cmd": "node /var/lib/homebridge/Cmd4Scripts/State.js"
+              },
+              {
+                 "type": "TemperatureSensor",
+                 "displayName": "Temperature_1",
+                 "currentTemperature":        50.0,
+                 "name":                     "Temperature 1",
+                 "stateChangeResponseTime":   3,
+                 "state_cmd": "node /var/lib/homebridge/Cmd4Scripts/State.js"
+              },
+			  {
+                 "type": "HumiditySensor",
+                 "displayName": "Humidity_1",
+                 "currentRelativeHumidity":   1,
+                 "name":                     "Humidity 1",
+                 "stateChangeResponseTime":   3,
+                 "state_cmd": "node /var/lib/homebridge/Cmd4Scripts/State.js"
+              },
+              {
+                 "type": "TemperatureSensor",
+                 "displayName": "Temperature_2",
+                 "currentTemperature":        50.0,
+                 "name":                     "Temperature 2",
+                 "stateChangeResponseTime":   3,
+                 "state_cmd": "node /var/lib/homebridge/Cmd4Scripts/State.js"
+              },
+			  {
+                 "type": "HumiditySensor",
+                 "displayName": "Humidity_2",
+                 "currentRelativeHumidity":   1,
+                 "name":                     "Humidity 2",
+                 "stateChangeResponseTime":   3,
+                 "state_cmd": "node /var/lib/homebridge/Cmd4Scripts/State.js"
+              },
+			  {
+                 "type": "TemperatureSensor",
+                 "displayName": "Core_0",
+                 "currentTemperature":        50.0,
+                 "name":                     "Core 0",
+                 "stateChangeResponseTime":   3,
+                 "state_cmd": "node /var/lib/homebridge/Cmd4Scripts/State.js"
+              },
+			  {
+               "type": "GarageDoorOpener",
+               "displayName": "GarageDoorOpener",
+               "currentDoorState":         "OPEN",
+               "targetDoorState":          "OPEN",
+			   "obstructionDetected":      "FALSE",
+               "name":                     "GarageDoorOpener",
+               "polling": [
+                  {"currentDoorState":     "OPEN",      "interval": 540, "timeout": 8000}
+               ],
+               "stateChangeResponseTime":   3,
+               "state_cmd": "node /var/lib/homebridge/Cmd4Scripts/State.js"
+			  },
+            {
+               "type": "AirQualitySensor",
+               "displayName": "AirQualitySensor_0",
+               "airQuality":               "EXCELLENT",
+               "VOCDensity":                50,
+               "name":                     "AirQualitySensor_0",
+               "stateChangeResponseTime":   3,
+               "state_cmd": "node /var/lib/homebridge/Cmd4Scripts/State.js"
+            },
+            {
+               "type": "CarbonDioxideSensor",
+               "displayName": "CO2_Sensor_0",
+               "carbonDioxideDetected":    "CO2_LEVELS_NORMAL",
+               "carbonDioxideLevel":        0,
+               "carbonDioxidePeakLevel":    0,
+               "name":                     "CO2_Sensor_0",
+               "polling":
+                 [
+                    {"carbonDioxideDetected": 50, "interval": 1, "timeout": 4000}
+                 ],
+               "stateChangeResponseTime":   3,
+               "state_cmd": "node /var/lib/homebridge/Cmd4Scripts/State.js"
+            },
+            {
+               "type":                     "Outlet",
+               "displayName":              "Outlet_0",
+               "on":                       "FALSE",
+               "outletInUse":              "TRUE",
+               "name":                     "Outlet 0",
+               "stateChangeResponseTime":   3,
+               "state_cmd": "node /var/lib/homebridge/Cmd4Scripts/State.js"
+            },
+            {
+               "type":                     "Outlet",
+               "displayName":              "Outlet_1",
+               "on":                       "FALSE",
+               "outletInUse":              "TRUE",
+               "name":                     "Outlet 1",
+               "stateChangeResponseTime":   3,
+               "state_cmd": "node /var/lib/homebridge/Cmd4Scripts/State.js"
+            },
+            {
+               "type":                     "Outlet",
+               "displayName":              "Outlet_2",
+               "on":                       "FALSE",
+               "outletInUse":              "TRUE",
+               "name":                     "Outlet 2",
+               "stateChangeResponseTime":   3,
+               "state_cmd": "node /var/lib/homebridge/Cmd4Scripts/State.js"
+            }
+		  ]
+	  }
+	]
+}
